@@ -29,7 +29,19 @@ const Header = () => {
         </Row>
       </SuperHeader>
       <MainHeader>
+        <ActionGroup>
+          <button>
+            <Search size={24} />
+          </button>
+          <button>
+            <Menu size={24} />
+          </button>
+        </ActionGroup>
         <Logo />
+        <SubscribeGroup>
+          <Button>SUBSCRIBE</Button>
+          <SubscriberLink>Already a subscriber?</SubscriberLink>
+        </SubscribeGroup>
       </MainHeader>
     </header>
   );
@@ -39,6 +51,10 @@ const SuperHeader = styled.div`
   padding: 16px 0;
   background: var(--color-gray-900);
   color: white;
+
+  @media ${QUERIES.desktopAndUp} {
+    display: none;
+  }
 `;
 
 const Row = styled(MaxWidthWrapper)`
@@ -62,9 +78,34 @@ const ActionGroup = styled.div`
 const MainHeader = styled(MaxWidthWrapper)`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 32px;
   margin-bottom: 48px;
+
+  > ${ActionGroup} {
+    display: none;
+
+    @media ${QUERIES.desktopAndUp} {
+      display: flex;
+    }
+  }
+`;
+
+const SubscribeGroup = styled.div`
+  display: none;
+
+  @media ${QUERIES.desktopAndUp} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+`;
+
+const SubscriberLink = styled.button`
+  text-decoration: underline;
+  font-style: italic;
+  font-size: 14px;
 `;
 
 export default Header;

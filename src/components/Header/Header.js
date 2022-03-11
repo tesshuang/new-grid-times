@@ -78,10 +78,13 @@ const ActionGroup = styled.div`
 const MainHeader = styled(MaxWidthWrapper)`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 32px;
   margin-bottom: 48px;
 
+  @media ${QUERIES.desktopAndUp} {
+    justify-content: space-between;
+  }
   > ${ActionGroup} {
     display: none;
 

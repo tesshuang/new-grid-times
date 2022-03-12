@@ -54,6 +54,21 @@ const Wrapper = styled.div`
     'advertisement';
   gap: 48px;
   margin-bottom: 48px;
+
+  @media ${QUERIES.tabletAndUp} {
+    grid-template-columns: 1fr 252px;
+    grid-template-areas:
+    'main-story secondary-stories'
+    'advertisement advertisement'
+    'opinion-stories opinion-stories';
+    gap: 32px;
+  }
+  @media ${QUERIES.desktopAndUp} {
+    grid-template-columns: 500px 400px 300px;
+    grid-template-areas:
+    'main-story secondary-stories opinion-stories'
+    'main-story advertisement advertisement';
+  }
 `;
 
 const MainStorySection = styled.section`

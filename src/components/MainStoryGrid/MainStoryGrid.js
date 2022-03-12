@@ -6,6 +6,7 @@ import {
   OPINION_STORIES,
   SECONDARY_STORIES,
 } from '../../data';
+import { QUERIES } from '../../constants';
 
 import SectionTitle from '../SectionTitle';
 import MainStory from '../MainStory';
@@ -76,6 +77,19 @@ const StoryList = styled.div`
 
 const OpinionSection = styled.section`
   grid-area: opinion-stories;
+
+  @media ${QUERIES.tabletOnly} {
+    > ${StoryList} {
+      flex-direction: row;
+      gap: 32px;
+
+      > a {
+        padding-bottom: revert;
+        margin-bottom: revert;
+        border-bottom: none;
+      }
+    }
+  }
 `;
 
 const AdvertisementSection = styled.section`

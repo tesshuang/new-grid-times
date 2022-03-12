@@ -24,8 +24,9 @@ const Wrapper = styled.article`
   justify-content: space-between;
   align-items: center;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.tabletOnly} {
     flex-direction: column;
+    align-items:start;
   }
 
   @media ${QUERIES.desktopAndUp} {
